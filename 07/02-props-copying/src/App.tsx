@@ -1,19 +1,33 @@
 import * as React from 'react';
+import CharacterList, { Character } from './CharacterList';
+
 import './App.css';
 
-import logo from './logo.svg';
-
 class App extends React.Component {
-  public render() {
+  render() {
+    const characters: Character[] = [
+      {
+        name: '羽咲 綾乃',
+        age: 16,
+        height: 151,
+      },
+      {
+        name: '荒垣 なぎさ',
+        age: 18,
+        height: 174,
+      },
+      {
+        name: '泉 理子',
+        age: 16,
+      },
+    ];
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="container">
+        <header>
+          <h1>はねバト！　キャラクター一覧</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <CharacterList school="北野町高校" characters={characters} />
       </div>
     );
   }
